@@ -272,5 +272,19 @@ namespace WindowsFormsApp2
             DilationFilter df = new DilationFilter();
             backgroundWorker1.RunWorkerAsync(df);
         }
+
+        private void erosionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ErosionFilter ef = new ErosionFilter();
+            backgroundWorker1.RunWorkerAsync(ef);
+        }
+
+        private void closingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*DilationFilter df = new DilationFilter();
+            backgroundWorker1.RunWorkerAsync(df);
+            ErosionFilter ef = new ErosionFilter();
+            backgroundWorker1.RunWorkerAsync(ef);*/
+        }
     }
 }

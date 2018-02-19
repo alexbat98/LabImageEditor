@@ -9,11 +9,20 @@ namespace WindowsFormsApp2
 {
     class GlassFilter : Filter
     {
-        protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
+
+        private double randomNumber;
+
+        public GlassFilter()
         {
             Random rand = new Random();
-            int nX = (int)(x + (rand.NextDouble() - 0.5) * 10);
-            int nY = (int)(y + (rand.NextDouble() - 0.5) * 10);
+            randomNumber = rand.NextDouble();
+        }
+
+        protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
+        {
+            
+            int nX = (int)(x + (randomNumber - 0.5) * 10);
+            int nY = (int)(y + (randomNumber - 0.5) * 10);
 
             if (nX >= sourceImage.Width || nX < 0 || nY >= sourceImage.Height || nY < 0)
             {
