@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlurFilter.cs" />
+    <Compile Include="ClosingFilter.cs" />
     <Compile Include="DilationFilter.cs" />
     <Compile Include="ErosionFilter.cs" />
     <Compile Include="Filter.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="MedianFilter.cs" />
     <Compile Include="MotionBlur.cs" />
     <Compile Include="MoveFilter.cs" />
+    <Compile Include="OpeningFilter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RotateFilter.cs" />

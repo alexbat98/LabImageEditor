@@ -9,7 +9,7 @@ namespace WindowsFormsApp2
 
         protected abstract Color calculateNewPixelColor(Bitmap sourceImage, int x, int y);
 
-        public Bitmap processImage(Bitmap sourceImage, BackgroundWorker bgWorker)
+        public virtual Bitmap processImage(Bitmap sourceImage, BackgroundWorker bgWorker)
         {
             Bitmap result = new Bitmap(sourceImage.Width, sourceImage.Height);
 

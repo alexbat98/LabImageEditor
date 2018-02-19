@@ -281,10 +281,14 @@ namespace WindowsFormsApp2
 
         private void closingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*DilationFilter df = new DilationFilter();
-            backgroundWorker1.RunWorkerAsync(df);
-            ErosionFilter ef = new ErosionFilter();
-            backgroundWorker1.RunWorkerAsync(ef);*/
+            ClosingFilter cf = new ClosingFilter();
+            backgroundWorker1.RunWorkerAsync(cf);
+        }
+
+        private void openingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpeningFilter of = new OpeningFilter();
+            backgroundWorker1.RunWorkerAsync(of);
         }
     }
 }
