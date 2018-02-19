@@ -52,11 +52,13 @@
             this.sharpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.motionBlurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.medianFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scharrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mathMorphologyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.medianFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dilationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -88,7 +90,7 @@
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(64, 36);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(64, 38);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openToolStripMenuItem
@@ -111,20 +113,20 @@
             this.cancelToolStripMenuItem,
             this.redoToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(67, 36);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(67, 38);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // cancelToolStripMenuItem
             // 
             this.cancelToolStripMenuItem.Name = "cancelToolStripMenuItem";
-            this.cancelToolStripMenuItem.Size = new System.Drawing.Size(172, 38);
+            this.cancelToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
             this.cancelToolStripMenuItem.Text = "Undo";
             this.cancelToolStripMenuItem.Click += new System.EventHandler(this.cancelToolStripMenuItem_Click);
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(172, 38);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
             this.redoToolStripMenuItem.Text = "Redo";
             this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
             // 
@@ -132,7 +134,8 @@
             // 
             this.filtersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pixelToolStripMenuItem,
-            this.matrixToolStripMenuItem});
+            this.matrixToolStripMenuItem,
+            this.mathMorphologyToolStripMenuItem});
             this.filtersToolStripMenuItem.Name = "filtersToolStripMenuItem";
             this.filtersToolStripMenuItem.Size = new System.Drawing.Size(90, 38);
             this.filtersToolStripMenuItem.Text = "Filters";
@@ -147,7 +150,7 @@
             this.moverotateToolStripMenuItem,
             this.glassToolStripMenuItem});
             this.pixelToolStripMenuItem.Name = "pixelToolStripMenuItem";
-            this.pixelToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
+            this.pixelToolStripMenuItem.Size = new System.Drawing.Size(308, 38);
             this.pixelToolStripMenuItem.Text = "Pixel";
             // 
             // inversionToolStripMenuItem
@@ -219,7 +222,7 @@
             this.medianFilterToolStripMenuItem,
             this.scharrToolStripMenuItem});
             this.matrixToolStripMenuItem.Name = "matrixToolStripMenuItem";
-            this.matrixToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
+            this.matrixToolStripMenuItem.Size = new System.Drawing.Size(308, 38);
             this.matrixToolStripMenuItem.Text = "Matrix";
             // 
             // blurToolStripMenuItem
@@ -257,12 +260,27 @@
             this.motionBlurToolStripMenuItem.Text = "Motion Blur";
             this.motionBlurToolStripMenuItem.Click += new System.EventHandler(this.motionBlurToolStripMenuItem_Click);
             // 
+            // medianFilterToolStripMenuItem
+            // 
+            this.medianFilterToolStripMenuItem.Name = "medianFilterToolStripMenuItem";
+            this.medianFilterToolStripMenuItem.Size = new System.Drawing.Size(257, 38);
+            this.medianFilterToolStripMenuItem.Text = "Median filter";
+            this.medianFilterToolStripMenuItem.Click += new System.EventHandler(this.medianFilterToolStripMenuItem_Click);
+            // 
             // scharrToolStripMenuItem
             // 
             this.scharrToolStripMenuItem.Name = "scharrToolStripMenuItem";
             this.scharrToolStripMenuItem.Size = new System.Drawing.Size(257, 38);
             this.scharrToolStripMenuItem.Text = "Scharr";
             this.scharrToolStripMenuItem.Click += new System.EventHandler(this.scharrToolStripMenuItem_Click);
+            // 
+            // mathMorphologyToolStripMenuItem
+            // 
+            this.mathMorphologyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dilationToolStripMenuItem});
+            this.mathMorphologyToolStripMenuItem.Name = "mathMorphologyToolStripMenuItem";
+            this.mathMorphologyToolStripMenuItem.Size = new System.Drawing.Size(308, 38);
+            this.mathMorphologyToolStripMenuItem.Text = "Math morphology";
             // 
             // progressBar1
             // 
@@ -290,12 +308,12 @@
             this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
-            // medianFilterToolStripMenuItem
+            // dilationToolStripMenuItem
             // 
-            this.medianFilterToolStripMenuItem.Name = "medianFilterToolStripMenuItem";
-            this.medianFilterToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
-            this.medianFilterToolStripMenuItem.Text = "Median filter";
-            this.medianFilterToolStripMenuItem.Click += new System.EventHandler(this.medianFilterToolStripMenuItem_Click);
+            this.dilationToolStripMenuItem.Name = "dilationToolStripMenuItem";
+            this.dilationToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
+            this.dilationToolStripMenuItem.Text = "Dilation";
+            this.dilationToolStripMenuItem.Click += new System.EventHandler(this.dilationToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -350,6 +368,8 @@
         private System.Windows.Forms.ToolStripMenuItem cancelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem medianFilterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mathMorphologyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dilationToolStripMenuItem;
     }
 }
 

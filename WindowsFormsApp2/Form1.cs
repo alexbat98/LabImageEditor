@@ -266,5 +266,11 @@ namespace WindowsFormsApp2
             MedianFilter mf = new MedianFilter();
             backgroundWorker1.RunWorkerAsync(mf);
         }
+
+        private void dilationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DilationFilter df = new DilationFilter();
+            backgroundWorker1.RunWorkerAsync(df);
+        }
     }
 }
