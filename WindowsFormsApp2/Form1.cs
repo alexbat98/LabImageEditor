@@ -260,5 +260,11 @@ namespace WindowsFormsApp2
             oldHeight = Height;
             oldWidth = Width;
         }
+
+        private void medianFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MedianFilter mf = new MedianFilter();
+            backgroundWorker1.RunWorkerAsync(mf);
+        }
     }
 }

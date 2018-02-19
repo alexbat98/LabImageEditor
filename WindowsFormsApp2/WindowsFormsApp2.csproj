@@ -59,6 +59,7 @@
     <Compile Include="InvertFilter.cs" />
     <Compile Include="LightenFilter.cs" />
     <Compile Include="MatrixFilter.cs" />
+    <Compile Include="MedianFilter.cs" />
     <Compile Include="MotionBlur.cs" />
     <Compile Include="MoveFilter.cs" />
     <Compile Include="Program.cs" />
