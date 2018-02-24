@@ -63,6 +63,7 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.linearScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.greyWorldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -153,7 +154,8 @@
             this.lightenToolStripMenuItem,
             this.moverotateToolStripMenuItem,
             this.glassToolStripMenuItem,
-            this.linearScaleToolStripMenuItem});
+            this.linearScaleToolStripMenuItem,
+            this.greyWorldToolStripMenuItem});
             this.pixelToolStripMenuItem.Name = "pixelToolStripMenuItem";
             this.pixelToolStripMenuItem.Size = new System.Drawing.Size(308, 38);
             this.pixelToolStripMenuItem.Text = "Pixel";
@@ -351,6 +353,13 @@
             this.linearScaleToolStripMenuItem.Text = "Linear scale";
             this.linearScaleToolStripMenuItem.Click += new System.EventHandler(this.linearScaleToolStripMenuItem_Click);
             // 
+            // greyWorldToolStripMenuItem
+            // 
+            this.greyWorldToolStripMenuItem.Name = "greyWorldToolStripMenuItem";
+            this.greyWorldToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
+            this.greyWorldToolStripMenuItem.Text = "Grey world";
+            this.greyWorldToolStripMenuItem.Click += new System.EventHandler(this.greyWorldToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -410,6 +419,7 @@
         private System.Windows.Forms.ToolStripMenuItem closingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem linearScaleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem greyWorldToolStripMenuItem;
     }
 }
 

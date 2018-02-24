@@ -289,5 +289,11 @@ namespace WindowsFormsApp2
             LinearHistogramScale lhs = new LinearHistogramScale();
             backgroundWorker1.RunWorkerAsync(lhs);
         }
+
+        private void greyWorldToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GreyWorldFilter gwf = new GreyWorldFilter();
+            backgroundWorker1.RunWorkerAsync(gwf);
+        }
     }
 }

@@ -59,6 +59,7 @@
     <Compile Include="GaussianBlur.cs" />
     <Compile Include="GlassFilter.cs" />
     <Compile Include="GrayScaleFilter.cs" />
+    <Compile Include="GreyWorldFilter.cs" />
     <Compile Include="InvertFilter.cs" />
     <Compile Include="LightenFilter.cs" />
     <Compile Include="LinearHistogramScale.cs" />
