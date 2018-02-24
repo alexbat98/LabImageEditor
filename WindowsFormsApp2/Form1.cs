@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp2
@@ -16,8 +12,8 @@ namespace WindowsFormsApp2
         private int oldWidth;
         private int oldHeight;
 
-        private Stack<Bitmap> oldImages = new Stack<Bitmap>();
-        private Stack<Bitmap> newImages = new Stack<Bitmap>();
+        private readonly Stack<Bitmap> oldImages = new Stack<Bitmap>();
+        private readonly Stack<Bitmap> newImages = new Stack<Bitmap>();
 
         public Form1()
         {
@@ -53,7 +49,6 @@ namespace WindowsFormsApp2
 
         private void progressBar1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -120,7 +115,6 @@ namespace WindowsFormsApp2
 
         private void sharpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
         }
 
         private void sharpenToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -156,7 +150,7 @@ namespace WindowsFormsApp2
         private void motionBlurToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MotionBlur mb = new MotionBlur();
-            backgroundWorker1.RunWorkerAsync(mb); 
+            backgroundWorker1.RunWorkerAsync(mb);
         }
 
         private void scharrToolStripMenuItem_Click(object sender, EventArgs e)
@@ -179,7 +173,7 @@ namespace WindowsFormsApp2
             {
                 // Saves the Image via a FileStream created by the OpenFile method.
                 System.IO.FileStream fs =
-                   (System.IO.FileStream)saveFileDialog1.OpenFile();
+                    (System.IO.FileStream) saveFileDialog1.OpenFile();
                 // Saves the Image in the appropriate ImageFormat based upon the
                 // File type selected in the dialog box.
                 // NOTE that the FilterIndex property is one-based.
@@ -187,17 +181,17 @@ namespace WindowsFormsApp2
                 {
                     case 1:
                         image.Save(fs,
-                           System.Drawing.Imaging.ImageFormat.Jpeg);
+                            System.Drawing.Imaging.ImageFormat.Jpeg);
                         break;
 
                     case 2:
                         image.Save(fs,
-                           System.Drawing.Imaging.ImageFormat.Bmp);
+                            System.Drawing.Imaging.ImageFormat.Bmp);
                         break;
 
                     case 3:
                         image.Save(fs,
-                           System.Drawing.Imaging.ImageFormat.Gif);
+                            System.Drawing.Imaging.ImageFormat.Gif);
                         break;
                 }
 
@@ -238,21 +232,20 @@ namespace WindowsFormsApp2
                 pictureBox1.Width = pictureBox1.Width + deltaX;
 
                 progressBar1.Location = new Point(
-                            progressBar1.Location.X,
-                            progressBar1.Location.Y + deltaY
-                       );
+                    progressBar1.Location.X,
+                    progressBar1.Location.Y + deltaY
+                );
 
                 progressBar1.Width = progressBar1.Width + deltaX;
 
                 cancelBtn.Location = new Point(
-                        cancelBtn.Location.X + deltaX,
-                        cancelBtn.Location.Y + deltaY
-                    );
+                    cancelBtn.Location.X + deltaX,
+                    cancelBtn.Location.Y + deltaY
+                );
             }
 
             oldHeight = Height;
             oldWidth = Width;
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -289,6 +282,12 @@ namespace WindowsFormsApp2
         {
             OpeningFilter of = new OpeningFilter();
             backgroundWorker1.RunWorkerAsync(of);
+        }
+
+        private void linearScaleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LinearHistogramScale lhs = new LinearHistogramScale();
+            backgroundWorker1.RunWorkerAsync(lhs);
         }
     }
 }
