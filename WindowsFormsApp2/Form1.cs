@@ -295,5 +295,11 @@ namespace WindowsFormsApp2
             GreyWorldFilter gwf = new GreyWorldFilter();
             backgroundWorker1.RunWorkerAsync(gwf);
         }
+
+        private void topHatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TopHatFilter thf = new TopHatFilter();
+            backgroundWorker1.RunWorkerAsync(thf);
+        }
     }
 }

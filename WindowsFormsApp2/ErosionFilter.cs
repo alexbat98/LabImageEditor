@@ -12,7 +12,7 @@ namespace WindowsFormsApp2
     {
         protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
         {
-            int radius = 1;
+            int radius = 5;
             bool hasBlack = false;
 
             for (int k = -radius; k <= radius; k++)

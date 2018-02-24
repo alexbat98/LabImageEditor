@@ -64,6 +64,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.linearScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.greyWorldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.topHatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -85,7 +86,7 @@
             this.filtersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1466, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(1458, 40);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -287,7 +288,8 @@
             this.dilationToolStripMenuItem,
             this.erosionToolStripMenuItem,
             this.closingToolStripMenuItem,
-            this.openingToolStripMenuItem});
+            this.openingToolStripMenuItem,
+            this.topHatToolStripMenuItem});
             this.mathMorphologyToolStripMenuItem.Name = "mathMorphologyToolStripMenuItem";
             this.mathMorphologyToolStripMenuItem.Size = new System.Drawing.Size(308, 38);
             this.mathMorphologyToolStripMenuItem.Text = "Math morphology";
@@ -360,11 +362,18 @@
             this.greyWorldToolStripMenuItem.Text = "Grey world";
             this.greyWorldToolStripMenuItem.Click += new System.EventHandler(this.greyWorldToolStripMenuItem_Click);
             // 
+            // topHatToolStripMenuItem
+            // 
+            this.topHatToolStripMenuItem.Name = "topHatToolStripMenuItem";
+            this.topHatToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
+            this.topHatToolStripMenuItem.Text = "Top Hat";
+            this.topHatToolStripMenuItem.Click += new System.EventHandler(this.topHatToolStripMenuItem_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1466, 881);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1458, 881);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.pictureBox1);
@@ -420,6 +429,7 @@
         private System.Windows.Forms.ToolStripMenuItem openingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem linearScaleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem greyWorldToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem topHatToolStripMenuItem;
     }
 }
 
