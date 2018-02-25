@@ -21,13 +21,8 @@ namespace WindowsFormsApp2
         protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
         {
             
-            int nX = (int)(x + (randomNumber - 0.5) * 10);
-            int nY = (int)(y + (randomNumber - 0.5) * 10);
-
-            if (nX >= sourceImage.Width || nX < 0 || nY >= sourceImage.Height || nY < 0)
-            {
-                return Color.Black;
-            }
+            int nX = Clamp((int)(x + (randomNumber - 0.5) * 10), 0, sourceImage.Width - 1);
+            int nY = Clamp((int)(y + (randomNumber - 0.5) * 10), 0, sourceImage.Height - 1);
 
             return sourceImage.GetPixel(nX, nY);
         }
