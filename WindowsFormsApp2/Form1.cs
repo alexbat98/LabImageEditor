@@ -12,6 +12,10 @@ namespace WindowsFormsApp2
         private int oldWidth;
         private int oldHeight;
 
+        private int mmkWidth = 3;
+        private int mmkHeight = 3;
+        private int[,] mmkMatrix = {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}};
+
         private readonly Stack<Bitmap> oldImages = new Stack<Bitmap>();
         private readonly Stack<Bitmap> newImages = new Stack<Bitmap>();
 
@@ -262,25 +266,25 @@ namespace WindowsFormsApp2
 
         private void dilationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DilationFilter df = new DilationFilter();
+            DilationFilter df = new DilationFilter(mmkWidth, mmkHeight, mmkMatrix);
             backgroundWorker1.RunWorkerAsync(df);
         }
 
         private void erosionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ErosionFilter ef = new ErosionFilter();
+            ErosionFilter ef = new ErosionFilter(mmkWidth, mmkHeight, mmkMatrix);
             backgroundWorker1.RunWorkerAsync(ef);
         }
 
         private void closingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClosingFilter cf = new ClosingFilter();
+            ClosingFilter cf = new ClosingFilter(mmkWidth, mmkHeight, mmkMatrix);
             backgroundWorker1.RunWorkerAsync(cf);
         }
 
         private void openingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpeningFilter of = new OpeningFilter();
+            OpeningFilter of = new OpeningFilter(mmkWidth, mmkHeight, mmkMatrix);
             backgroundWorker1.RunWorkerAsync(of);
         }
 
@@ -298,8 +302,21 @@ namespace WindowsFormsApp2
 
         private void topHatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TopHatFilter thf = new TopHatFilter();
+            TopHatFilter thf = new TopHatFilter(mmkWidth, mmkHeight, mmkMatrix);
             backgroundWorker1.RunWorkerAsync(thf);
+        }
+
+        private void editKernelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MathMorphKernelEditor form = new MathMorphKernelEditor(mmkWidth, mmkHeight, mmkMatrix, this);
+            form.Show();
+        }
+
+        public void UpdateKernel(int width, int height, int[,] matrix)
+        {
+            mmkWidth = width;
+            mmkHeight = height;
+            mmkMatrix = matrix;
         }
     }
 }

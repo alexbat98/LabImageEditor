@@ -35,5 +35,10 @@ namespace WindowsFormsApp2
 
             return val < min ? min : val;
         }
+
+        protected double Intensity(Color color)
+        {
+            return 0.36 * color.R + 0.53 * color.G + 0.11 * color.B;
+        } 
     }
 }

@@ -10,8 +10,15 @@ namespace WindowsFormsApp2
 {
     class OpeningFilter : Filter
     {
-        private DilationFilter dilationFilter = new DilationFilter();
-        private ErosionFilter erosionFilter = new ErosionFilter();
+        private DilationFilter dilationFilter;
+        private ErosionFilter erosionFilter;
+
+        public OpeningFilter(int w, int h, int[,] k)
+        {
+
+            dilationFilter = new DilationFilter(w, h, k);
+            erosionFilter = new ErosionFilter(w, h, k);
+        }
 
         protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
         {

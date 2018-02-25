@@ -7,6 +7,17 @@ namespace WindowsFormsApp2
     {
         private Bitmap openedImage;
 
+        private int _kwidth;
+        private int _kheight;
+        private int[,] _kmatrix;
+
+        public TopHatFilter(int w, int h, int[,] k)
+        {
+            _kwidth = w;
+            _kheight = h;
+            _kmatrix = k;
+        }
+
         protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
         {
             Color color = openedImage.GetPixel(x, y);
@@ -21,7 +32,7 @@ namespace WindowsFormsApp2
 
         public override Bitmap processImage(Bitmap sourceImage, BackgroundWorker bgWorker)
         {
-            OpeningFilter of = new OpeningFilter();
+            OpeningFilter of = new OpeningFilter(_kwidth, _kheight, _kmatrix);
             openedImage = of.processImage(sourceImage, bgWorker);
 
             return base.processImage(sourceImage, bgWorker);
