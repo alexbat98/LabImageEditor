@@ -113,6 +113,8 @@
             this.Controls.Add(this.label1);
             this.Name = "MathMorphKernelEditor";
             this.Text = "MethMorphKernelEditor";
+            this.Load += new System.EventHandler(this.MathMorphKernelEditor_Load);
+            this.Resize += new System.EventHandler(this.MathMorphKernelEditor_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

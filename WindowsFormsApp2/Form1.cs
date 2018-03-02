@@ -205,6 +205,11 @@ namespace WindowsFormsApp2
 
         private void cancelToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            undo();
+        }
+
+        private void undo()
+        {
             if (oldImages.Count > 0)
             {
                 newImages.Push(image);
@@ -215,6 +220,11 @@ namespace WindowsFormsApp2
         }
 
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            redo();
+        }
+
+        private void redo()
         {
             if (newImages.Count > 0)
             {
@@ -317,6 +327,22 @@ namespace WindowsFormsApp2
             mmkWidth = width;
             mmkHeight = height;
             mmkMatrix = matrix;
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.Z))
+            {
+                undo();
+                return true;
+            }
+
+            if (keyData == (Keys.Control | Keys.Shift | Keys.Z))
+            {
+                redo();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

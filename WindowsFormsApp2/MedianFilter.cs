@@ -22,25 +22,63 @@ namespace WindowsFormsApp2
                 return sourceImage.GetPixel(x, y);
             }
 
-            int[] reds = new int[(radius * 2 + 1) * (radius * 2 + 1)];
-            
+            Color[] colors = new Color[(radius * 2 + 1) * (radius * 2 + 1)];
+            double[] intensities = new double[(radius * 2 + 1) * (radius * 2 + 1)];
+
             for (int k = -radius; k <= radius; k++)
             {
                 for (int j = -radius; j <= radius; j++)
                 {
-                    reds[(k+radius) * (radius * 2 + 1) + j + radius] = sourceImage.GetPixel(x + k, y + j).R;
+                    colors[(k+radius) * (radius * 2 + 1) + j + radius] = sourceImage.GetPixel(x + k, y + j);
+                    intensities[(k + radius) * (radius * 2 + 1) + j + radius] =
+                        Intensity(colors[(k + radius) * (radius * 2 + 1) + j + radius]);
                 }
             }
 
-            Array.Sort(reds);
+            bool flag = false;
+            for (int i = 0; i < intensities.Length; i++)
+            {
+                for (int j = 1; j < intensities.Length; j++)
+                {
+                    if (intensities[j] < intensities[j - 1])
+                    {
+                        double tmpI = intensities[j];
+                        Color tmpColor = colors[j];
+                        intensities[j] = intensities[j - 1];
+                        colors[j] = colors[j - 1];
+                        intensities[j - 1] = tmpI;
+                        colors[j - 1] = tmpColor;
+                        flag = true;
+                    }
+                }
 
-            Color srcColor = sourceImage.GetPixel(x, y);
-            //resColor.R = reds[reds.Length / 2];
-            return Color.FromArgb(
-                        reds[reds.Length / 2],
-                        srcColor.G,
-                        srcColor.B
-                   );
+                if (!flag)
+                {
+                    break;
+                }
+            }
+
+            return colors[colors.Length / 2];
+
+//            int[] reds = new int[(radius * 2 + 1) * (radius * 2 + 1)];
+//            
+//            for (int k = -radius; k <= radius; k++)
+//            {
+//                for (int j = -radius; j <= radius; j++)
+//                {
+//                    reds[(k+radius) * (radius * 2 + 1) + j + radius] = sourceImage.GetPixel(x + k, y + j).R;
+//                }
+//            }
+//
+//            Array.Sort(reds);
+//
+//            Color srcColor = sourceImage.GetPixel(x, y);
+//            //resColor.R = reds[reds.Length / 2];
+//            return Color.FromArgb(
+//                        reds[reds.Length / 2],
+//                        srcColor.G,
+//                        srcColor.B
+//                   );
         }
     }
 }
